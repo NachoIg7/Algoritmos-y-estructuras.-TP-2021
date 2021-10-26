@@ -1,0 +1,9 @@
+[{'name':'tyrantrum', 'nivel': 12 ,'tipo':'fuego', 'subtipo':'planta', 'entrenador': 'juan' },
+            {'name':'wingull', 'nivel': 180 ,'tipo':'agua','subtipo':'volador', 'entrenador': 'juan'},
+            {'name':'wolverine', 'nivel':3  ,'tipo':'fuego'  ,'subtipo':'terreno', 'entrenador': 'enzo' },
+            {'name':'tyrantrum'  , 'nivel': 12 ,'tipo':'fuego'  ,'subtipo':'planta', 'entrenador': 'maria' },
+            {'name':'wingull' , 'nivel': 18 ,'tipo':'agua'  ,'subtipo':'volador', 'entrenador': 'enzo' },
+            {'name':'tyrantrum,'  , 'nivel': 12 ,'tipo':'fuego'  ,'subtipo':'planta', 'entrenador': 'maria' },
+            {'name':'gigante' , 'nivel': 21 ,'tipo':'agua','subtipo':'volador', 'entrenador': 'juan' },
+            {'name':'rayo' , 'nivel':3  ,'tipo':'fuego'  ,'subtipo':'terreno', 'entrenador': 'enzo' }
+]
