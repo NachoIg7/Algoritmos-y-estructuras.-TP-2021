@@ -1,5 +1,5 @@
 from cola import Cola
-
+from lista import Lista
 
 class Arbol(object):
 
@@ -240,7 +240,7 @@ class Arbol(object):
                 self.der.conta_criaturas_derrotadas(dic)
 
 
-    #! ----- COMIENZO FUNCIONES EJERCICIO 1 GUIA DE EJERCICIOS ----- #!  
+    
     def contar_ocurrencias (self, buscado):
         """Determina la cantidad de ocurrencias de un elemento en el árbol."""
         cantidad = 0
@@ -271,8 +271,7 @@ class Arbol(object):
                 impares += impar
         return pares, impares
 
-
-#! ----- COMIENZO FUNCIONES EJERCICIO 4 GUIA DE EJERCICIOS ----- #!
+### Funciones ejercicio 4
 
     def hijo_derecho (self, nodo):
         """Muestra el hijo derecho de un nodo dado."""
@@ -295,7 +294,7 @@ class Arbol(object):
                 self.der.hijo_izquierdo(nodo)
 
 
-#! ----- COMIENZO FUNCIONES EJERCICIO 5 GUIA DE EJERCICIOS ----- #!  
+### Funciones ejercicio 5
 
     def inorden_villanos (self):
         """Realiza el barrido inorden del arbol mostrando solo a los villanos.
@@ -356,7 +355,7 @@ class Arbol(object):
 
 
 
-#! ----- COMIENZO FUNCIONES EJERCICIO 23 GUIA DE EJERCICIOS ----- #!
+### Funciones ejercicio 23
     
     def inorden_criaturas (self):
         """Realiza el barrido inorden del arbol de criaturas mostrando la criatura y quien la capturo.
@@ -384,6 +383,9 @@ class Arbol(object):
         else:
             print('No hay ninguna criatura con ese nombre.')
 
+    
+
+
     def contador_criaturas_derrotadas(self, dic):
         if (self.info is not None):
             if (self.izq is not None):
@@ -404,7 +406,8 @@ class Arbol(object):
                 print (self.info)
             if (self.der is not None):
                 self.der.criaturas_derrotadas(heroe)
-
+    
+    
     def criaturas_no_derrotadas (self):
         """Muestra las criaturas que no han sido derrotadas."""  
         if (self.info is not None):
@@ -431,3 +434,44 @@ class Arbol(object):
                 print(self.info)
             if(self.der is not None):
                 self.der.busqueda_por_coincidencia(clave)
+
+
+##FUnciones 2do parcial
+    def mostrar_informacion_codigo (self, codigo):
+            pos = self.busqueda(codigo)
+            if (pos):
+                print('- Dinosaurio: ',pos.datos['nombre'], '- codigo: ',pos.datos['codigo'],'- zona ubicacion: ', pos.datos['zona ubicacion'])
+            else:
+                print('No hay dinosaurio con ese codigo.')    
+
+    def mostrar_informacion_nombre (self, dinosaurio):
+            """Muestra informacion de un dinosaurio dado."""  
+            if (self.info is not None):
+                if (self.izq is not None):
+                    self.izq.mostrar_ubicacion_dinosaurio(dinosaurio)
+                if (self.datos['nombre'] == dinosaurio):
+                    print('- Dinosaurio: ',self.datos['nombre'], '- codigo: ',self.datos['codigo'],'- zona ubicacion: ', self.datos['zona ubicacion'])
+                if (self.der is not None):
+                    self.der.mostrar_ubicacion_dinosaurio(dinosaurio)
+
+    def mostrar_ubicacion_dinosaurio (self, dinosaurio):
+            """Muestra ubiacion de un dinosaurio dado."""  
+            if (self.info is not None):
+                if (self.izq is not None):
+                    self.izq.mostrar_ubicacion_dinosaurio(dinosaurio)
+                if (self.datos['nombre'] == dinosaurio):
+                    print('-La ubicacion del dinosaurio ',self.datos['nombre'], ' es: ', self.datos['zona ubicacion'])
+                if (self.der is not None):
+                    self.der.mostrar_ubicacion_dinosaurio(dinosaurio)
+        
+    def contar_ocurrencias_dinosaurios(self, dinosaurio):
+            cantidad = 0
+            if(self.info is not None):
+                if(self.info == dinosaurio):
+                    cantidad += 1
+                if(self.izq is not None):
+                    cantidad += self.izq.contar_ocurrencias(dinosaurio)
+                if(self.der is not None):
+                    cantidad += self.der.contar_ocurrencias(dinosaurio)
+            return cantidad
+
